@@ -1,0 +1,16 @@
+name: Matrix
+
+on: push
+
+jobs:
+  runs-on: ${{matrix.os}}
+  strategy:
+    matrix: 
+      os: [ubuntu-latest, windows-latest]
+      node: [18,20]
+
+  steps:
+    - name: Print config
+      run: |
+          echo "OS: ${{ matrix.os }}"
+          echo "Node: ${{ matrix.node }}"
