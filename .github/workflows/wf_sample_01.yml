@@ -1,6 +1,6 @@
 name: Lets begin and Explore
 
-runs-name: begin and Explore
+run-name: begin and Explore
 
 on: 
   push:
