@@ -20,3 +20,14 @@ jobs:
           echo "Repository : $GITHUB_REPOSITORY"
           echo "events : $GITHUB_EVENT_NAME"
           echo "SHA : $GITHUB_SHA"
+
+      - name: List installed tools
+        run: |
+          echo "=== Java ==="
+          java -version 2>&1 || echo 'Not installed'
+          echo "=== Node ==="
+          node --version || echo 'Not installed'
+          echo "=== Python ==="
+          python3 --version || echo 'Not installed'
+          echo "=== Docker ==="
+          docker --version || echo 'Not installed'
