@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   test-env:
 
-   
+   environment: production
 
    runs-on: ubuntu-latest
 
