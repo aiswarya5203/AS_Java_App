@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-      - run: actions/checkout@v4
+        run: actions/checkout@v4
 
       - name: Display runner inff
-      - run: |
+        run: |
           echo "Runner OS : $RUNNER_OS"
           echo "Runnr arch : $RUNNER_ARCH"
           echo "Workspace : $GITHUB_WORKSPACE"
