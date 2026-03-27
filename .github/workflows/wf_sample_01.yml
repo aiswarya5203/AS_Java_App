@@ -1,7 +1,5 @@
 name: Lets begin and Explore
 
-run-name: begin and Explore
-
 on: 
   push:
     branches: [main]
