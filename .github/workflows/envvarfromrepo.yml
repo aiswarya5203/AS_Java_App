@@ -1,0 +1,19 @@
+name: Repo env example
+
+on: workflow_dispatch
+
+jobs:
+  test-env:
+
+   environment: production
+
+   runs-on: ubuntu-latest
+
+   steps:
+      - name: Use environment variables
+        env:
+          API_URL: ${{ vars.API_URL }}
+          APP_MODE: ${{ vars.APP_MODE }}
+        run: |
+          echo "API URL: $API_URL"
+          echo "App Mode: $APP_MODE""
