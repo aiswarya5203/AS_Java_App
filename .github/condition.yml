@@ -1,0 +1,31 @@
+name: Condition demo
+
+on: 
+  workflow_dispatch:
+    inputs:
+      env: 
+        description: Select environment
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - test
+          - production
+
+jobs:
+  run-based-on-env:
+   runs-on: ubuntu-latest
+
+   steps:
+    - name: show selected env
+      run: echo "Seleted env is ${{inputs.env}}"  
+
+    - name: Run only dfor production
+      if: ${{inputs.env == 'production'}}
+      run: echo "YAY for PROD"
+
+    - name: Skip for tohers
+      if: ${{inputs.dev != 'prod'}}
+      run: echo "NAY for non prod"
+
