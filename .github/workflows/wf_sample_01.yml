@@ -1,0 +1,24 @@
+name: Lets begin and Explore
+
+runs-name: begin&Explore
+
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+      - run: actions/checkout@v4
+
+      - name: Display runner inff
+      - run: |
+          echo "Runner OS : $RUNNER_OS"
+          echo "Runnr arch : $RUNNER_ARCH"
+          echo "Workspace : $GITHUB_WORKSPACE"
+          echo "Repository : $GITHUB_REPOSITORY"
+          echo "events : $GITHUB_EVENT_NAME"
+          echo "SHA : $GITHUB_SHA"
